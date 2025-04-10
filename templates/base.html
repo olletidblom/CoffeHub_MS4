@@ -1,6 +1,6 @@
+<!doctype html>
 {% load static %}
 
-<!doctype html>
 <html lang="en">
 
 <head>
@@ -39,10 +39,6 @@
     
   {% include "./includes/header.html" %}
 
-    <div class="logo-wrapper">
-    <img src="{% static 'images/logo.png' %}" alt="Coffee Hub Logo" class="logo-floating" />
-    </div>
-    
       {% if messages %}
       <div class="message-container"></div>
       {% endif %}
@@ -55,7 +51,9 @@
     
       {% block postloadjs %}
       {% endblock %}
+
+  {% include "./includes/footer.html" %}
     
-    </body>
+</body>
     
     </html>

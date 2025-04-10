@@ -1,3 +1,12 @@
+body {
+  background: url('/static/images/background.png') repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #333;
+}
+
+
 #topnav {
   background-image: url('/static/images/coffebeans.jpg');
   background-size: cover;
@@ -5,32 +14,66 @@
   background-position: center;
 }
 
-.logo-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 10px;
-  left: 0;
-  right: 0;
-  z-index: 1050;
-  pointer-events: none;
+.hero-logo {
+  height: 100vh;
+  width: 100%;
+  animation: fadeIn 1.5s ease-out forwards, float 6s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
-.logo-floating {
-  width: 300px;
-  object-fit: contain;
+
+.site-footer {
+  background-color: #8b5e3c;
+  background-image: url('/static/images/bronze-texture.jpg'); /* optional if using texture */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav-link.text-white,
+.logo-font.text-white {
+  color: #f4e6cd !important;
+}
+
+.hero-logo-img {
+  width: 700px;
   border-radius: 50%;
-  
-  opacity: 0;
-  transform: translateY(-10px);
-  animation: fadeInLogo 0.8s ease-out forwards;
+  object-fit: contain;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1.5s ease-out forwards;
 }
 
+.tagline {
+  color: #f4e6cd;
+  font-family: 'Pacifico', cursive;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
 
-@keyframes fadeInLogo {
-  to {
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
     opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
     transform: translateY(0);
   }
+  50% {
+    transform: translateY(-10px);
+  }
+  
 }
