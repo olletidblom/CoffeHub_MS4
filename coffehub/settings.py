@@ -57,10 +57,6 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-]
 
 
 
@@ -79,7 +75,9 @@ ROOT_URLCONF = 'coffehub.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+                os.path.join(BASE_DIR, 'templates'),
+                os.path.join(BASE_DIR, 'templates', 'allauth')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,6 +88,12 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
 
 WSGI_APPLICATION = 'coffehub.wsgi.application'
 
