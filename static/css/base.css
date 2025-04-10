@@ -1,6 +1,36 @@
 #topnav {
-    background-image: url('/static/images/coffebeans.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url('/static/images/coffebeans.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  pointer-events: none;
+}
+
+.logo-floating {
+  width: 300px;
+  object-fit: contain;
+  border-radius: 50%;
+  
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInLogo 0.8s ease-out forwards;
+}
+
+
+@keyframes fadeInLogo {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}

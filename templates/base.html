@@ -36,16 +36,12 @@
 </head>
 
 <body>
-    <header class="container-fluid fixed-top mb-2">
-      <div id="topnav" class="row bg-black pt-lg-2 d-none d-lg-flex">
-        <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 text-start ps-4">
-          <a href="{% url 'home' %}" class="nav-link main-logo-link">
-            <p class="text-white small mb-0" style="font-family: 'Pacifico', cursive; font-size: 1rem;">Taste the Quality</p>
-            <h2 class="logo-font text-white my-0"><strong>Coffee</strong> Hub</h2>
-          </a>
-        </div>
-      </div>
-    </header>
+    
+  {% include "./includes/header.html" %}
+
+    <div class="logo-wrapper">
+    <img src="{% static 'images/logo.png' %}" alt="Coffee Hub Logo" class="logo-floating" />
+    </div>
     
       {% if messages %}
       <div class="message-container"></div>
