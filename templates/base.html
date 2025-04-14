@@ -39,21 +39,24 @@
     
   {% include "./includes/header.html" %}
 
-      {% if messages %}
-      <div class="message-container"></div>
-      {% endif %}
+  <main>
+    {% if messages %}
+    <div class="message-container"></div>
+    {% endif %}
     
-      {% block page_header %}
-      {% endblock %}
+    {% block page_header %}
+    {% endblock %}
     
-      {% block content %}
-      {% endblock %}
+    {% block content %}
     
-      {% block postloadjs %}
-      {% endblock %}
+    {% endblock %}
+  </main>
+
+  {% block postloadjs %}
+  {% endblock %}
 
   {% include "./includes/footer.html" %}
     
 </body>
     
-    </html>
+</html>
