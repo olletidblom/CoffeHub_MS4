@@ -11,7 +11,7 @@
       <p><strong>Price:</strong> ${{ product.price }}</p>
       <div class="d-flex gap-2 mt-3 justify-content-center">
         <a href="{% url 'product-list' %}" class="btn btn-outline-dark">← Back</a>
-        <a href="#" class="btn btn-dark">Add to Cart</a>
+        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-dark">Add to Cart</a>
       
       </div>
     </div>
