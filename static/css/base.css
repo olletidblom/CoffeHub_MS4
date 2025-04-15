@@ -175,3 +175,11 @@ main {
   background-color:#f4e6cd !important;
 }
 
+.message-wrapper {
+  z-index: 1055;
+}
+
+.custom-alert {
+  min-width: 250px;
+  background-color: rgba(248, 249, 250, 0.85);
+}
