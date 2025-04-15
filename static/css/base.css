@@ -123,3 +123,45 @@ main {
   border: none;
   border-radius: 8px;
 }
+.comment-section {
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .comment-section {
+    max-width: 600px;
+    margin-left: 0;
+  }
+}
+
+.comment-box p {
+  word-wrap: break-word;
+}
+.comment-box {
+  background-color: #f4e6cd;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.comment-section {
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .comment-section {
+    max-width: 600px;
+  }
+}
+
+.comment-box p {
+  word-wrap: break-word;
+}
+.product-detail-img {
+  max-height: 650px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}

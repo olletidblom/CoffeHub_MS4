@@ -8,6 +8,8 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'text': forms.Textarea(attrs={
                 'rows': 3,
-                'placeholder': 'Write your thoughts about this coffee...'
+                'placeholder': 'Write your thoughts about this coffee...',
+                'class': 'form-control',
+                'style': 'background-color: #f4e6cd;'
             }),
         }
