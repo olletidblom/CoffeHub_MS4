@@ -3,17 +3,54 @@
 
 {% block content %}
 <div class="container mt-5 pt-5">
-  <h2>Your Cart</h2>
+  <h2 class="mb-4">Your Cart</h2>
   {% if cart.items.all %}
-    <ul class="list-group mb-3">
-      {% for item in cart.items.all %}
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          {{ item.product.name }} (x{{ item.quantity }})
-          <span>${{ item.total_price }}</span>
-        </li>
-      {% endfor %}
-    </ul>
-    <h5>Total: ${{ cart.total_price }}</h5>
+    <div class="card shadow p-3">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle cart-table rounded bg-beige">
+          <thead>
+            <tr>
+              <th scope="col" class="table-beige text-white text-center rounded-start">Product</th>
+              <th scope="col" class="table-beige text-white text-center">Quantity</th>
+              <th scope="col" class="table-beige text-white text-center">Price</th>
+              <th scope="col" class="table-beige text-white text-center">Total</th>
+              <th scope="col" class="table-beige text-white text-center rounded-end">Action</th>
+            </tr>
+          </thead>
+          <tbody class="bg-beige">
+            {% for item in cart.items.all %}
+            <tr>
+              <td class="align-middle bg-beige text-center rounded-start">
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                  <img src="{% static item.product.image_url %}" alt="{{ item.product.name }}" style="height: 60px; width: auto;" class="img-thumbnail mb-2">
+                  <span>{{ item.product.name }}</span>
+                </div>
+              </td>
+              <td class="align-middle bg-beige text-center">
+                <form action="{% url 'update_cart' item.id %}" method="POST" class="d-inline-block">
+                  {% csrf_token %}
+                  <select name="quantity" onchange="this.form.submit()" class="form-select form-select-sm w-auto">
+                    {% for i in quantity_range %}
+                      <option value="{{ i }}" {% if item.quantity == i %}selected{% endif %}>{{ i }}</option>
+                    {% endfor %}
+                  </select>
+                </form>
+              </td>
+              <td class="align-middle bg-beige text-center">${{ item.product.price }}</td>
+              <td class="align-middle bg-beige text-center">${{ item.total_price }}</td>
+              <td class="align-middle bg-beige text-center rounded-end">
+                <form action="{% url 'remove_from_cart' item.id %}" method="POST">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <h5 class="mt-4 text-end">Total: ${{ cart.total_price }}</h5>
+    </div>
   {% else %}
     <p>Your cart is empty.</p>
   {% endif %}

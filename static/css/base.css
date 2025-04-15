@@ -120,8 +120,6 @@ main {
   flex-direction: column;
   justify-content: space-between;
   background-color: #e8d8b5;
-  border: none;
-  border-radius: 8px;
 }
 .comment-section {
   max-width: 100%;
@@ -165,3 +163,15 @@ main {
   margin: 0 auto;
   display: block;
 }
+.cart-table {
+  background-color: #f4e6cd;
+}
+
+.table-beige {
+  background-color: #8b5e3c !important;
+}
+
+.bg-beige {
+  background-color:#f4e6cd !important;
+}
+
