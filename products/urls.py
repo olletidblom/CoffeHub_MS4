@@ -1,5 +1,3 @@
-
-
 from django.shortcuts import render
 from .models import Product
 
@@ -8,4 +6,5 @@ from . import views
 
 urlpatterns = [
     path('', views.product_list, name='product-list'),
+    path('<int:pk>/', views.product_detail, name='product_detail'),
 ]

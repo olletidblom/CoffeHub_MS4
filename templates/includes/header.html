@@ -12,7 +12,7 @@
     <!-- Right side: nav links -->
     <div class="col-12 col-lg-6 my-auto text-end pe-4">
       <nav class="nav justify-content-end gap-4 align-items-center">
-        <a class="nav-link text-white" href="">Products</a>
+        <a class="nav-link text-white" href="{% url 'product-list' %}">Products</a>
 
         {% if user.is_authenticated %}
           <div class="dropdown">
