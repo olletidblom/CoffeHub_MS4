@@ -125,6 +125,10 @@ main {
   max-width: 100%;
 }
 
+.signup {
+  margin-top: 120px;
+}
+
 @media (min-width: 768px) {
   .comment-section {
     max-width: 600px;
@@ -182,4 +186,56 @@ main {
 .custom-alert {
   min-width: 250px;
   background-color: rgba(248, 249, 250, 0.85);
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 160px);
+  padding: 2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  background-color: #f4e6cd;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card .form-label,
+.login-card input,
+.login-card button {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+@media (max-width: 400px) {
+  .login-wrapper {
+    padding: 1rem 0.5rem;
+    margin-top: 80px;
+  }
+  .signup {
+    margin-top: 20px;
+  }
+
+  .login-card {
+    padding: 0.75rem;
+    max-width: 100%;
+  }
+
+  .login-card .form-label,
+  .login-card input,
+  .login-card button {
+    font-size: 0.9rem;
+  }
 }

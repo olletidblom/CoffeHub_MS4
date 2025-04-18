@@ -50,6 +50,9 @@
         </table>
       </div>
       <h5 class="mt-4 text-end">Total: ${{ cart.total_price }}</h5>
+      <div class="text-end mt-3">
+        <a href="{% url 'checkout' %}" class="btn btn-success">Proceed to Checkout</a>
+      </div>
     </div>
   {% else %}
     <p>Your cart is empty.</p>
