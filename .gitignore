@@ -1,16 +1,14 @@
-
-.env 
-
+.env
+*.env
 *.pyc
 __pycache__/
 .venv/
 
-
 db.sqlite3
-
 
 .DS_Store
 
-
 staticfiles/
-media/.env # if not already listed
+media/
+
+load_products.py
