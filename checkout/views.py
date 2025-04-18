@@ -9,6 +9,7 @@ from django.conf import settings
 from .forms import CheckoutForm
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def add_to_cart(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     cart, _ = Cart.objects.get_or_create(user=request.user)
@@ -21,11 +22,13 @@ def add_to_cart(request, product_id):
         messages.success(request, f"'{product.name}' added to your cart.")
     return redirect('product_detail', pk=product_id)
 
+@login_required
 def view_cart(request):
     cart, _ = Cart.objects.get_or_create(user=request.user)
     quantity_range = range(1, 11)
     return render(request, 'checkout/cart.html', {'cart': cart, 'quantity_range': quantity_range})
 
+@login_required
 @require_POST
 def update_cart(request, item_id):
     item = get_object_or_404(CartItem, pk=item_id, cart__user=request.user)
@@ -36,6 +39,7 @@ def update_cart(request, item_id):
         messages.success(request, f"Updated quantity for '{item.product.name}'.")
     return redirect('view_cart')
 
+@login_required
 @require_POST
 def remove_from_cart(request, item_id):
     item = get_object_or_404(CartItem, pk=item_id, cart__user=request.user)
