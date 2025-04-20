@@ -11,6 +11,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 75px;
+  width: auto;
+  object-fit: contain;
 }
 
 .hero-logo {
