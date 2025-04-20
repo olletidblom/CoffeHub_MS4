@@ -5,7 +5,7 @@
 <div class="container py-5 mt-5">
   <div class="row justify-content-center text-center mb-5">
     <div class="col-md-6">
-      <img src="{% static product.image_url %}" class="img-fluid rounded shadow product-detail-img" alt="{{ product.name }}">
+      <img src="{% static product.image_url %}" class="img-fluid rounded shadow product-detail-img" alt="{{ product.name }}" width="600" height="400">
       <h2 class="mt-4">{{ product.name }}</h2>
       <p class="lead">{{ product.description }}</p>
       <p><strong>Price:</strong> ${{ product.price }}</p>
