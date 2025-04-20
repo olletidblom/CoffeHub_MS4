@@ -192,3 +192,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
 STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# Allow iframing for responsive design testing (disable in production)
+SECURE_FRAME_DENY = False
+X_FRAME_OPTIONS = 'ALLOWALL'
