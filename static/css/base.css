@@ -1,5 +1,5 @@
 body {
-  background: url('/static/images/background.png') repeat;
+  background: url('/static/images/background.webp') repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -7,7 +7,7 @@ body {
 }
 
 #topnav {
-  background-image: url('/static/images/coffebeans.jpg');
+  background-image: url('/static/images/coffebeans.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -27,7 +27,7 @@ body {
 
 .site-footer {
   background-color: #8b5e3c;
-  background-image: url('/static/images/bronze-texture.jpg'); /* optional if using texture */
+  background-image: url('/static/images/bronze-texture.webp'); /* optional if using texture */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
