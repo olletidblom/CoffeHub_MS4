@@ -29,6 +29,7 @@
 ---
 
 ## 📝 About
+
 CoffeHub is an eCommerce Django web app for coffee lovers. Users can browse, add to cart, and purchase coffee products. The site supports email verification, secure checkout via Stripe, and includes user authentication features.
 
 ---
@@ -185,14 +186,31 @@ Individual product added to a cart.
 
 ### **ERD Diagram**
 <details><summary>View Diagram</summary>
-<img src="docs/images/coffehub_erd.png" alt="CoffeHub ERD">
+<img src="docs/erd.png" alt="CoffeHub ERD">
 </details>
 
 > 💡 _All models are registered in the Django admin panel for easy access and management._
 
 ### 🎨 Wireframes
-- Mobile, tablet, and desktop wireframes created using Balsamiq or Figma *(insert screenshots)*
+Wireframes were created using [Balsamiq](https://balsamiq.com/) to plan the UI structure.
 
+<details><summary>Home</summary>
+<img src="docs/wireframe/home.png">
+</details>
+<details><summary>Products</summary>
+<img src="docs/wireframe/products.png">
+<img src="docs/wireframe/productsdetail.png">
+</details>
+<details><summary>Cart</summary>
+<img src="docs/wireframe/cart.png">
+</details>
+<details><summary>Account</summary>
+<img src="docs/wireframe/login.png">
+<img src="docs/wireframe/signup.png">
+<img src="docs/wireframe/mail.png">
+<img src="docs/wireframe/password.png">
+
+</details>
 ---
 
 ## 🚀 Features
@@ -204,9 +222,9 @@ Individual product added to a cart.
 
 <details><summary>🔍 Screenshots</summary>
 
-![Register](docs/images/features/register.png)  
-![Login](docs/images/features/login.png)  
-![Verification](docs/images/features/verify-email.png)
+![Register](docs/features/signin.png)  
+![Login](docs/features/signup.png)  
+![Verification](docs/features/emailvali.png)
 
 </details>
 
@@ -222,8 +240,10 @@ Individual product added to a cart.
 
 <details><summary>🛒 Screenshots</summary>
 
-![Cart View](docs/images/features/cart.png)  
-![Cart Update](docs/images/features/cart-update.png)
+![Home View](docs/features/home.png)  
+![Product View](docs/features/products.png)  
+![Product Detail ](docs/features/productdetails.png)
+![Cart View](docs/features/cart.png)  
 
 </details>
 
@@ -237,9 +257,9 @@ Individual product added to a cart.
 
 <details><summary>💳 Screenshots</summary>
 
-![Stripe Checkout](docs/images/features/checkout.png)  
-![Payment Success](docs/images/features/success.png)  
-![Payment Cancelled](docs/images/features/cancel.png)
+![Stripe Checkout](docs/features/payment.png)  
+![Payment Success](docs/features/paymentgood.png)  
+![Payment Cancelled](docs/features/paymentbad.png)
 
 </details>
 
@@ -254,8 +274,8 @@ Individual product added to a cart.
 
 <details><summary>☕ Screenshots</summary>
 
-![Product List](docs/images/features/products.png)  
-![Product Detail](docs/images/features/product-detail.png)
+![Product List](docs/features/products.png)  
+![Product Detail](docs/features/productdetails.png)
 
 </details>
 
@@ -336,7 +356,100 @@ Individual product added to a cart.
 - Validated HTML, CSS, and Python (PEP8)
 - Lighthouse and WAVE accessibility tests
 
-*(Include screenshots of test results and descriptions)*
+## ✔️ Validation
+
+- HTML and CSS validated using **W3C Validator**.
+- Python code checked with **PEP8 compliance**.
+- JavaScript validated using **JSHint**.
+- Accessibility tested using **Lighthouse** and **WAVE**.
+
+### HTML Validation
+The W3C Markup Validation Service was used to validate the HTML of the website. All pages pass with exept signup woch has some error in the allauth code. Ive been trying to fix it in diffrent ways, but did not end upp succesful.
+<details><summary>Home</summary>
+<img src="docs/html/homepage.png">
+</details>
+<details><summary>Products</summary>
+<img src="docs/html/products.png">
+<img src="docs/html/detailproduct.png">
+<img src="docs/html/commentedit.png">
+<img src="docs/html/commentdelete.png">
+
+</details>
+<details><summary>Cart</summary>
+<img src="docs/html/cart.png">
+</details>
+<details><summary>Account</summary>
+<img src="docs/html/login.png">
+<img src="docs/html/logout.png">
+<img src="docs/html/signup.png">
+<img src="docs/html/emails.png">
+<img src="docs/html/changepassword.png">
+
+
+### CSS Validation
+The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.
+The style.css file was approved.
+<details><summary>style.css</summary>
+<img src="docs/css/css.png">
+</details>
+
+### JavaScript Validation
+JSHint JS Validation Service
+
+<details><summary>Script.js</summary>
+<img src="docs/js/js.png">
+</details><hr>
+
+### PEP8 Validation
+Python code checked with **PEP8 compliance**
+
+
+### Accessibility
+The WAVE WebAIM web accessibility evaluation tool was used to ensure the website met high accessibility standards. All pages pass with 0 errors.
+<details><summary>Home</summary>
+<img src="docs/access/home.png">
+</details>
+<details><summary>Products</summary>
+<img src="docs/access/products.png">
+<img src="docs/access/productdetail.png">
+</details>
+<details><summary>Cart</summary>
+<img src="docs/access/cart.png">
+</details>
+<details><summary>Account</summary>
+<img src="docs/access/login.png">
+<img src="docs/access/logout.png">
+<img src="docs/access/signup.png">
+<img src="docs/access/email.png">
+<img src="docs/access/password.png">
+
+</details>
+
+
+### Performance 
+Google Lighthouse in Google Chrome Developer Tools was used to test the performance of the website. 
+
+<details><summary>Home</summary>
+<img src="docs/lighthouse/home.png">
+</details>
+<details><summary>Products</summary>
+<img src="docs/lighthouse/products.png">
+<img src="docs/lighthouse/detailproduct.png">
+</details>
+<details><summary>Cart</summary>
+<img src="docs/lighthouse/cart.png">
+</details>
+<details><summary>Account</summary>
+<img src="docs/lighthouse/login.png">
+<img src="docs/lighthouse/logout.png">
+<img src="docs/lighthouse/signup.png">
+<img src="docs/lighthouse/mail.png">
+<img src="docs/lighthouse/password.png">
+
+
+
+---
+
 
 ---
 
@@ -351,31 +464,184 @@ Individual product added to a cart.
 
 ---
 
-## 🚀 Deployment
+## 🚀 Heroku Deployment
 
-### Platform: Heroku
-- Deployed using GitHub integration
-- Env vars set for secret keys, SendGrid, Stripe
 
-### To Deploy:
-- Create app on Heroku
-- Push code from GitHub repo
-- Set environment variables
-- Run migrations
-- Collect static files
+
+# 🚀 **Heroku Deployment Guide**
+
+## 🌐 **Deploying Through the Heroku Website**
+[🔗 **Official Heroku Git Deployment Guide**](https://devcenter.heroku.com/articles/git)  
+
+This guide will walk you through deploying your application from GitHub using **Heroku**.
+
+---
+
+### 📝 **1. Create a Heroku Account & Log In**
+1. Visit [**Heroku**](https://heroku.com) and sign up/log in.
+2. Once logged in, navigate to your **dashboard**.
+
+<details>
+<summary>📸 Screenshots</summary>
+<img src="docs/images/heroku/signin.png">
+<img src="docs/images/heroku/signup.png">
+</details>
+
+---
+
+### 🚀 **2. Create a Heroku App**
+1. Click on **"New"** to create an app.
+2. Enter a unique app name (e.g., `doitms3`).
+3. Choose a region that suits you.
+
+<details>
+<summary>📸 Screenshots</summary>
+<img src="docs/images/heroku/dash.png">
+<img src="docs/images/heroku/new.png">
+<img src="docs/images/heroku/create.png">
+</details>
+
+---
+
+### 🔧 **3. Configure Settings**
+1. Go to **Settings**.
+2. Scroll down to **Config Vars** and add:
+   - `DATABASE_URL` (from `settings.py`)
+   - `SECRET_KEY` (from `settings.py`)
+   - `DISABLE_COLLECTSTATIC = 1`
+
+<details>
+<summary>📸 Screenshots</summary>
+<img src="docs/images/heroku/main.png">
+<img src="docs/images/heroku/settings.png">
+<img src="docs/images/heroku/config.png">
+</details>
+
+---
+
+### 💻 **4. Prepare Your Code in VS Code**
+1. Install **Gunicorn**:
+   ```sh
+   pip3 install gunicorn
+   pip3 freeze > requirements.txt
+   ```
+2. Create a **Procfile** in the same directory as `manage.py` with the following content:
+   ```
+   web: gunicorn doit.wsgi
+   ```
+
+<details>
+<summary>📸 Screenshot</summary>
+<img src="docs/images/heroku/procfile.png">
+</details>
+
+3. Update **settings.py**:
+   - Add `'.herokuapp.com'` to `ALLOWED_HOSTS`.
+   - Set `DEBUG = False`.
+
+<details>
+<summary>📸 Screenshots</summary>
+<img src="docs/images/heroku/allowedhost.png">
+<img src="docs/images/heroku/false.png">
+</details>
+
+---
+
+### 🗃️ **5. Run Migrations**
+1. Check migration status:
+   ```sh
+   python3 manage.py showmigrations
+   ```
+2. Apply migrations:
+   ```sh
+   python3 manage.py migrate
+   ```
+
+---
+
+### 🔗 **6. Connect to GitHub & Deploy**
+1. Go to **Deploy** tab in Heroku.
+2. Connect your **GitHub** repository.
+3. Enable **automatic deploys** from the `main` branch (optional).
+4. Click **Deploy**.
+
+<details>
+<summary>📸 Screenshots</summary>
+<img src="docs/images/heroku/main2.png">
+<img src="docs/images/heroku/github.png">
+<img src="docs/images/heroku/deploy.png">
+</details>
+
+---
+
+### ⚡ **7. Manage Dynos**
+1. Check your **dynos**.
+2. Make sure you are using the **ECO** plan.
+
+<details>
+<summary>📸 Screenshots</summary>
+<img src="docs/images/heroku/main3.png">
+<img src="docs/images/heroku/dynos.png">
+</details>
+
+---
+
+### 🌍 **8. Access Your Application**
+1. Click the provided **Heroku link** to access your app.
+2. If you encounter issues, check **Heroku build logs** for troubleshooting.
+
+---
+
+## 📟 **Heroku Deployment via Terminal**
+If you prefer the **command-line approach**, follow these steps:
+
+### 1️⃣ **Create a New Heroku App**
+```sh
+heroku create doit-todo-app
+```
+
+### 2️⃣ **Set Up Environment Variables**
+```sh
+heroku config:set SECRET_KEY='your-secret-key'
+heroku config:set DATABASE_URL='your-database-url'
+```
+
+### 3️⃣ **Push Code to Heroku**
+```sh
+git push heroku main
+```
+
+### 4️⃣ **Run Database Migrations**
+```sh
+heroku run python manage.py migrate
+```
+
+### 5️⃣ **Restart the Heroku App**
+```sh
+heroku restart
+```
+
+---
+
+### 🎉 **Your App is Now Live on Heroku!**  
+Click the link provided by **Heroku** to see your deployed application in action. 🚀
 
 ---
 
 ## 📜 Credits
-- Icons: [FontAwesome](https://fontawesome.com/)
-- Stripe & Django docs for guidance
+
+### 📷 Images
+- Placeholder images sourced from **ChatGpt**, edited with GIMP.
+
+### 📌 Code
+- Bootstrap templates used for styling.
+- Django documentation used for authentication and static file handling.
 
 ---
 
 ## 💙 Acknowledgements
-- Thanks to **Code Institute** for course content
-- Inspiration from previous MS3 project
+- Special thanks to **Mo Shami** for guidance.
+- Inspired by **Django tutorials and online resources**.
+- Thanks to **Code Institute** for support.
 
----
-
-📌 Replace placeholders with screenshots and links where needed!
+##### Back to [top](#table-of-contents)
