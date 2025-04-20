@@ -1,1 +1,1 @@
-web: gunicorn CoffeHub_MS4.wsgigit
+web: gunicorn coffehub.wsgi:application
