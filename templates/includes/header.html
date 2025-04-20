@@ -3,7 +3,6 @@
     <!-- Left side: logo -->
     <div class="col-12 col-lg-6 my-auto py-1 py-lg-0 text-center ps-4">
       <a href="{% url 'home' %}" class="nav-link main-logo-link">
-
         <p class="tagline">Taste the Quality</p>
         <h2 class="logo-font text-white my-0"><strong>Coffee</strong> Hub</h2>
       </a>
@@ -11,26 +10,37 @@
 
     <!-- Right side: nav links -->
     <div class="col-12 col-lg-6 my-auto text-end pe-4">
-      <nav class="nav justify-content-end gap-4 align-items-center">
-        <a class="nav-link text-white" href="{% url 'product-list' %}">Products</a>
-
-        {% if user.is_authenticated %}
-          <div class="dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Account
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="{% url 'account_email' %}">Manage Email</a></li>
-              <li><a class="dropdown-item" href="{% url 'account_change_password' %}">Change Password</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item text-danger" href="{% url 'account_logout' %}">Log Out</a></li>
-            </ul>
-          </div>
-        {% else %}
-          <a class="nav-link text-white" href="{% url 'account_login' %}">Login</a>
-        {% endif %}
-
-        <a class="nav-link text-white" href="{% url 'view_cart' %}">Cart</a>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+          <ul class="navbar-nav gap-4 align-items-center navbar-dark">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'product-list' %}">Products</a>
+            </li>
+            {% if user.is_authenticated %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Account
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end bg-dark text-white">
+                  <li><a class="dropdown-item" href="{% url 'account_email' %}">Manage Email</a></li>
+                  <li><a class="dropdown-item" href="{% url 'account_change_password' %}">Change Password</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item text-danger" href="{% url 'account_logout' %}">Log Out</a></li>
+                </ul>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'account_login' %}">Login</a>
+              </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'view_cart' %}">Cart</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
   </div>
