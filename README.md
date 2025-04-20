@@ -68,8 +68,6 @@ CoffeHub is an eCommerce Django web app for coffee lovers. Users can browse, add
 
 ### Users
 
-### Users
-
 <details><summary>1. As a user, I can register an account with email verification</summary>
 <img src="docs/images/user_storys/1.png">
 </details>
@@ -118,11 +116,9 @@ CoffeHub is an eCommerce Django web app for coffee lovers. Users can browse, add
 - Home > Products > Cart > Checkout > Success
 - Navbar and Footer consistent across pages
 
-from django.db import models
-
 ## 🛢️ Database
 
-The CoffeHub project uses a relational database powered by Django’s ORM, backed by PostgreSQL in production.
+The CoffeHub project uses Django’s ORM to manage a relational database structure. In development, it uses SQLite, while PostgreSQL is used for production.
 
 ---
 
@@ -130,49 +126,60 @@ The CoffeHub project uses a relational database powered by Django’s ORM, backe
 
 ---
 
-### **`Product` Model**
-Located in: `products/models.py`
+### **User Model**
+This project uses Django’s built-in `User` model (`django.contrib.auth.models.User`) for authentication. No custom user model was created.
 
-Represents a product available for sale.
-
-- `name`: `CharField` – Product name.
-- `description`: `TextField` – Optional product details.
-- `price`: `DecimalField` – Product price.
-- `image_url`: `URLField` – Link to product image.
+- `username`: User’s unique identifier.
+- `email`: Used for registration and verification.
+- `password`: Hashed and securely stored.
+- `is_active`, `is_staff`, `date_joined`: Standard Django fields.
+- Relationships: Linked via ForeignKey or OneToOneField in other models like `Cart` and `Comment`.
 
 ---
 
-### **`Comment` Model**
+### **Product Model**
+Located in: `products/models.py`
+
+Represents a product available for purchase.
+
+- `name`: `CharField` – Name of the product.
+- `description`: `TextField` – Optional details.
+- `price`: `DecimalField` – Cost of the product.
+- `image_url`: `URLField` – Image of the product.
+
+---
+
+### **Comment Model**
 Located in: `products/models.py`
 
 Allows users to comment on products.
 
 - `product`: `ForeignKey` to `Product`.
 - `user`: `ForeignKey` to Django `User`.
-- `text`: `TextField` – Comment content.
-- `created_at`: `DateTimeField` – Auto timestamp.
+- `text`: `TextField` – Content of the comment.
+- `created_at`: `DateTimeField` – Timestamp.
 
 ---
 
-### **`Cart` Model**
+### **Cart Model**
 Located in: `checkout/models.py`
 
-Stores each user’s active shopping cart.
+Each user has one associated cart.
 
-- `user`: `OneToOneField` – Connected to a `User`.
-- `total_price()`: method – Returns total value of all cart items.
+- `user`: `OneToOneField` to `User`.
+- `total_price()`: method – Calculates total cost of items.
 
 ---
 
-### **`CartItem` Model**
+### **CartItem Model**
 Located in: `checkout/models.py`
 
-Represents individual product entries in the user’s cart.
+Individual product added to a cart.
 
 - `cart`: `ForeignKey` to `Cart`.
 - `product`: `ForeignKey` to `Product`.
-- `quantity`: `PositiveIntegerField` – Default is 1.
-- `total_price()`: method – Returns line total for item.
+- `quantity`: `PositiveIntegerField` – Defaults to 1.
+- `total_price()`: method – Line total for the product.
 
 ---
 
@@ -181,52 +188,146 @@ Represents individual product entries in the user’s cart.
 <img src="docs/images/coffehub_erd.png" alt="CoffeHub ERD">
 </details>
 
-
-> 💡 _All models are registered in the Django admin panel for easy access during development._
-
-
+> 💡 _All models are registered in the Django admin panel for easy access and management._
 
 ### 🎨 Wireframes
 - Mobile, tablet, and desktop wireframes created using Balsamiq or Figma *(insert screenshots)*
 
 ---
 
-## 🛠️ Technologies Used
-- **HTML5**, **CSS3**, **JavaScript**, **Python3**
-- **Django** - Python web framework
-- **Django Allauth** - for user authentication
-- **PostgreSQL** - production DB
-- **SQLite** - development DB
-- **Stripe** - for payment processing
-- **SendGrid** - for email
-- **Heroku** - for deployment
-- **GitHub** - version control
-- **Bootstrap 5**, **Crispy Forms**, **Widget Tweaks**
+## 🚀 Features
+
+### ✅ Authentication
+- **User Registration** with email verification using SendGrid.
+- **Login/Logout** functionality with feedback messages.
+- **Only verified users can check out**, enhancing security and reliability.
+
+<details><summary>🔍 Screenshots</summary>
+
+![Register](docs/images/features/register.png)  
+![Login](docs/images/features/login.png)  
+![Verification](docs/images/features/verify-email.png)
+
+</details>
 
 ---
 
-## 🚀 Features
+### 🛒 Cart System
+- Users can:
+  - Add products to a cart.
+  - Increase/decrease quantity or remove items.
+  - View cart summary including item count and total price.
+  - Cart is session-based for anonymous users and linked to accounts for authenticated users.
+- Cart **empties automatically after successful checkout**.
 
-### User Authentication
-- Registration with email verification
-- Login/logout flow with secure redirect
+<details><summary>🛒 Screenshots</summary>
 
-### Cart
-- Add, update, and remove products
-- Cart persists per user session
+![Cart View](docs/images/features/cart.png)  
+![Cart Update](docs/images/features/cart-update.png)
 
-### Checkout
-- Stripe integration with success/cancel handling
-- Requires verified email to proceed
-- Cart is cleared after successful checkout
+</details>
 
-### Product Pages
-- List view with images, prices
-- Detail view with descriptions
+---
 
-### Responsive Design
-- Works across all screen sizes
-- Flexbox and Bootstrap grid used
+### 💳 Stripe Checkout Integration
+- Secure payment handling through Stripe.
+- Redirects users to success or cancel page depending on payment outcome.
+- Order summary and confirmation shown after payment.
+- Works with **Stripe test cards** for development.
+
+<details><summary>💳 Screenshots</summary>
+
+![Stripe Checkout](docs/images/features/checkout.png)  
+![Payment Success](docs/images/features/success.png)  
+![Payment Cancelled](docs/images/features/cancel.png)
+
+</details>
+
+---
+
+### 🛍️ Product Pages
+- **Product List View**:
+  - All coffee products displayed with name, image, price, and link to details.
+- **Product Detail View**:
+  - Includes image, detailed description, price, and "Add to Cart" button.
+  - Users can leave comments after logging in.
+
+<details><summary>☕ Screenshots</summary>
+
+![Product List](docs/images/features/products.png)  
+![Product Detail](docs/images/features/product-detail.png)
+
+</details>
+
+---
+
+### 💬 Product Comments
+- Authenticated users can:
+  - Leave comments on product pages.
+  - View all comments related to a product.
+  - Delete their own comments.
+- Admin can manage all comments through the admin panel.
+
+<details><summary>💬 Screenshots</summary>
+
+![Comments](docs/images/features/comments.png)  
+![Add Comment](docs/images/features/add-comment.png)
+
+</details>
+
+---
+
+### 📦 Admin Features
+- Admin panel access to:
+  - Manage all products (create, update, delete).
+  - Review and delete inappropriate comments.
+  - Monitor cart items and order-related data (if stored).
+
+<details><summary>🔐 Screenshots</summary>
+
+![Admin Dashboard](docs/images/features/admin-dashboard.png)  
+![Manage Products](docs/images/features/manage-products.png)
+
+</details>
+
+---
+
+### 📱 Responsive UI
+- Mobile-friendly design using Bootstrap 5.
+- Smooth navigation across desktop, tablet, and mobile devices.
+- **Cart, navbar, and footer adapt to screen size.**
+
+<details><summary>📱 Screenshots</summary>
+
+![Mobile View](docs/images/features/mobile.png)  
+![Tablet View](docs/images/features/tablet.png)
+
+</details>
+
+---
+
+### 📧 Email Functionality
+- SendGrid integration sends:
+  - Account verification emails.
+  - (Planned) Order confirmation emails after checkout.
+
+<details><summary>📧 Screenshots</summary>
+
+![Email Confirmation](docs/images/features/email-confirmation.png)
+
+</details>
+
+---
+
+### ✨ Flash Messages
+- Inform users of actions like login, logout, item added to cart, checkout success, etc.
+- Shown using Django’s messages framework styled with Bootstrap alerts.
+
+<details><summary>⚡ Screenshots</summary>
+
+![Messages](docs/images/features/messages.png)
+
+</details>
 
 ---
 
@@ -278,4 +379,3 @@ Represents individual product entries in the user’s cart.
 ---
 
 📌 Replace placeholders with screenshots and links where needed!
-
