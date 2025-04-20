@@ -6,6 +6,18 @@ body {
   color: #333;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 #topnav {
   background-image: url('/static/images/coffebeans.webp');
   background-size: cover;
@@ -14,6 +26,11 @@ body {
   height: 75px;
   width: auto;
   object-fit: contain;
+}
+
+.nav-link.text-white,
+.logo-font.text-white {
+  color: #f4e6cd !important;
 }
 
 .hero-logo {
@@ -26,24 +43,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.site-footer {
-  background-color: #8b5e3c;
-  background-image: url('/static/images/bronze-texture.webp'); /* optional if using texture */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #fff;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  z-index: 10;
-}
-
-.nav-link.text-white,
-.logo-font.text-white {
-  color: #f4e6cd !important;
 }
 
 .hero-logo-img {
@@ -61,6 +60,20 @@ body {
   font-family: 'Pacifico', cursive;
   font-size: 1rem;
   margin-bottom: 0;
+}
+
+.site-footer {
+  background-color: #8b5e3c;
+  background-image: url('/static/images/bronze-texture.webp'); /* optional if using texture */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  flex-shrink: 0;
 }
 
 @keyframes fadeIn {
@@ -83,29 +96,17 @@ body {
   }
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-body {
-  color: #333;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
-.site-footer {
-  flex-shrink: 0;
-}
-
 .carousel-inner img {
   max-height: 500px;
   object-fit: cover;
+}
+
+.card {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #e8d8b5;
 }
 
 .product-image {
@@ -125,52 +126,6 @@ main {
   object-fit: cover;
 }
 
-.card {
-  min-height: 420px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #e8d8b5;
-}
-.comment-section {
-  max-width: 100%;
-}
-
-.signup {
-  margin-top: 120px;
-}
-
-@media (min-width: 768px) {
-  .comment-section {
-    max-width: 600px;
-    margin-left: 0;
-  }
-}
-
-.comment-box p {
-  word-wrap: break-word;
-}
-.comment-box {
-  background-color: #f4e6cd;
-  padding: 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 1rem;
-}
-
-.comment-section {
-  max-width: 100%;
-}
-
-@media (min-width: 768px) {
-  .comment-section {
-    max-width: 600px;
-  }
-}
-
-.comment-box p {
-  word-wrap: break-word;
-}
 .product-detail-img {
   max-height: 650px;
   width: auto;
@@ -178,6 +133,7 @@ main {
   margin: 0 auto;
   display: block;
 }
+
 .cart-table {
   background-color: #f4e6cd;
 }
@@ -187,7 +143,7 @@ main {
 }
 
 .bg-beige {
-  background-color:#f4e6cd !important;
+  background-color: #f4e6cd !important;
 }
 
 .message-wrapper {
@@ -230,27 +186,27 @@ main {
   margin-bottom: 1rem;
   width: 100%;
 }
-@media (max-width: 400px) {
-  .login-wrapper {
-    padding: 1rem 0.5rem;
-    margin-top: 80px;
-  }
-  .signup {
-    margin-top: 20px;
-  }
 
-  .login-card {
-    padding: 0.75rem;
-    max-width: 100%;
-  }
-
-.login-card .form-label,
-.login-card input,
-.login-card button {
-  font-size: 0.9rem;
+.comment-section {
+  max-width: 100%;
 }
 
-/* Added styles for burger menu dropdown visibility */
+.comment-box {
+  background-color: #f4e6cd;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.comment-box p {
+  word-wrap: break-word;
+}
+
+.signup {
+  margin-top: 120px;
+}
+
 .navbar-dark .navbar-nav .nav-link,
 .navbar-dark .navbar-nav .dropdown-menu .dropdown-item {
   color: #f4e6cd !important;
@@ -270,4 +226,31 @@ main {
 .navbar-dark .dropdown-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+@media (min-width: 768px) {
+  .comment-section {
+    max-width: 600px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-wrapper {
+    padding: 1rem 0.5rem;
+    margin-top: 80px;
+  }
+  .signup {
+    margin-top: 20px;
+  }
+
+  .login-card {
+    padding: 0.75rem;
+    max-width: 100%;
+  }
+
+  .login-card .form-label,
+  .login-card input,
+  .login-card button {
+    font-size: 0.9rem;
+  }
 }
