@@ -195,4 +195,4 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Allow iframing for responsive design testing (disable in production)
 SECURE_FRAME_DENY = False
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'ALLOWALL'
