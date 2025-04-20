@@ -7,9 +7,7 @@
 {% block content %}
 <div class="login-wrapper">
   <div class="card p-4 shadow-sm login-card signup">
-    {% element h1 %}
-      {% trans "Sign Up" %}
-    {% endelement %}
+    <h1>{% trans "Sign Up" %}</h1>
     <p>
       {% blocktranslate trimmed %}
         Already have an account? Then please <a href="{{ login_url }}">sign in</a>.
@@ -17,26 +15,12 @@
     </p>
     {% if not SOCIALACCOUNT_ONLY %}
       {% url 'account_signup' as action_url %}
-      {% element form form=form method="post" action=action_url tags="entrance,signup" %}
-        {% slot body %}
-          {% csrf_token %}
-          {% element fields form=form unlabeled=True %}
-          {% endelement %}
-          {{ redirect_field }}
-        {% endslot %}
-        {% slot actions %}
-          {% element button tags="prominent,signup" type="submit" %}
-            {% trans "Sign Up" %}
-          {% endelement %}
-        {% endslot %}
-      {% endelement %}
-    {% endif %}
-    {% if PASSKEY_SIGNUP_ENABLED %}
-      {% element hr %}
-      {% endelement %}
-      {% element button href=signup_by_passkey_url tags="prominent,signup,outline,primary" %}
-        {% trans "Sign up using a passkey" %}
-      {% endelement %}
+      <form method="post" action="{{ action_url }}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ redirect_field }}
+        <button type="submit">{% trans "Sign Up" %}</button>
+      </form>
     {% endif %}
     {% if SOCIALACCOUNT_ENABLED %}
       {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
