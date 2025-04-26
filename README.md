@@ -377,11 +377,7 @@ _As a user, I can register an account so that I can securely use the site._
 | Click on 'Sign Up' | Signup form appears | Works as expected |
 | Fill out the form and submit | Account is created and confirmation email sent | Works as expected |
 
-<details>
-<summary>Screenshot</summary>
-<img src="docs/images/user_storys_testing/signup1.png">
-<img src="docs/images/user_storys_testing/signup2.png">
-</details>
+
 
 ---
 
@@ -395,11 +391,7 @@ _As a user, I can browse available products so I can choose what to buy._
 | Visit products page | All products are displayed with info | Works as expected |
 | Click on product | Product detail page loads | Works as expected |
 
-<details>
-<summary>Screenshot</summary>
-<img src="docs/images/user_storys_testing/products1.png">
-<img src="docs/images/user_storys_testing/productdetail1.png">
-</details>
+
 
 ---
 
@@ -413,11 +405,7 @@ _As a user, I can add a product to my cart so I can buy it later._
 | Click 'Add to Cart' | Product is added and message shows | Works as expected |
 | Check cart | Product is visible in cart | Works as expected |
 
-<details>
-<summary>Screenshot</summary>
-<img src="docs/images/user_storys_testing/addtocart1.png">
-<img src="docs/images/user_storys_testing/cartview1.png">
-</details>
+
 
 ---
 
@@ -431,11 +419,7 @@ _As a user, I can update cart quantities or remove items._
 | Increase/decrease quantity | Cart total updates accordingly | Works as expected |
 | Click remove | Product is deleted from cart | Works as expected |
 
-<details>
-<summary>Screenshot</summary>
-<img src="docs/images/user_storys_testing/cartupdate1.png">
-<img src="docs/images/user_storys_testing/removefromcart1.png">
-</details>
+
 
 ---
 
@@ -449,11 +433,7 @@ _As a user, I can checkout securely using Stripe._
 | Click 'Checkout' | Redirected to Stripe | Works as expected |
 | Complete payment | Redirected to success page | Works as expected |
 
-<details>
-<summary>Screenshot</summary>
-<img src="docs/images/user_storys_testing/stripe1.png">
-<img src="docs/images/user_storys_testing/success1.png">
-</details>
+
 
 ---
 
@@ -467,12 +447,7 @@ _As a user, I can leave a comment and manage my own comments._
 | Submit a comment | Comment is visible under product | Works as expected |
 | Edit or delete own comment | Changes appear or comment is removed | Works as expected |
 
-<details>
-<summary>Screenshot</summary>
-<img src="docs/images/user_storys_testing/comment1.png">
-<img src="docs/images/user_storys_testing/editcomment1.png">
-<img src="docs/images/user_storys_testing/deletecomment1.png">
-</details>
+
 
 ---
 
@@ -488,11 +463,7 @@ _As a user, I can request a password reset in case I forget it._
 | Follow link in email | Password reset form loads | Works as expected |
 | Enter new password and confirm | Password updated and redirected to login | Works as expected |
 
-<details>
-<summary>Screenshot</summary>
-<img src="docs/images/user_storys_testing/8.1.png">
-<img src="docs/images/user_storys_testing/8.2.png">
-</details>
+
 
 ---
 
@@ -508,11 +479,7 @@ _As a user, I can navigate the site easily on any device._
 | Tap hamburger icon | Navigation links expand | Works as expected |
 | Tap link | Navigation menu closes and page loads | Works as expected |
 
-<details>
-<summary>Screenshot</summary>
-<img src="docs/images/user_storys_testing/10.1.png">
-<img src="docs/images/user_storys_testing/10.2.png">
-</details>
+
 
 ---
 
@@ -530,11 +497,7 @@ _As an admin, I can manage products so that I can keep the product catalog up to
 | Edit a product            | Product form loads with existing data          | Works as expected      |
 | Delete a product          | Product is removed from the product list       | Works as expected      |
 
-<details>
-<summary>Screenshot</summary>
-<img src="docs/images/user_storys_testing/11.1.png">
-<img src="docs/images/user_storys_testing/11.2.png">
-</details>
+
 
 ----
 
@@ -549,11 +512,6 @@ _As an admin, I can moderate user comments so that I can ensure community guidel
 | Navigate to comments section  | All product comments are listed                    | Works as expected      |
 | Delete inappropriate comment  | Comment is removed and no longer visible           | Works as expected      |
 
-<details>
-<summary>Screenshot</summary>
-<img src="docs/images/user_storys_testing/12.1.png">
-<img src="docs/images/user_storys_testing/12.2.png">
-</details>
 
 ---
 
@@ -568,11 +526,7 @@ _As an admin, I can view user accounts and order history so that I can assist us
 | View user list                 | All registered users are listed                  | Works as expected      |
 | View order history for a user  | Orders for that user are shown                   | Works as expected      |
 
-<details>
-<summary>Screenshot</summary>
-<img src="docs/images/user_storys_testing/adminpanel1.png">
-<img src="docs/images/user_storys_testing/managecomments1.png">
-</details>
+
 ---
 
 ## 🧪 Testing
@@ -608,7 +562,6 @@ The W3C Markup Validation Service was used to validate the HTML of the website. 
 <img src="docs/html/signup.png">
 <img src="docs/html/emails.png">
 <img src="docs/html/changepassword.png">
-
 
 ### CSS Validation
 The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.
