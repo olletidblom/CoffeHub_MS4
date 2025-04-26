@@ -1,9 +1,9 @@
 # ☕ CoffeHub - Online Coffee Shop
 
-![Am I Responsive](docs/images/amiresponsive/amiresponsive.png)
+![Am I Responsive](docs/responsive/responsive.png)
 
 **Developer: Olle**  
-🌐 [Visit Live Website](https://your-live-site-link.com)
+🌐 [Visit Live Website](https://coffehub-b4c752a41ad3.herokuapp.com/)
 
 ---
 
