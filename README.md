@@ -69,39 +69,62 @@ CoffeHub is an eCommerce Django web app for coffee lovers. Users can browse, add
 
 ### Users
 
-<details><summary>1. As a user, I can register an account with email verification</summary>
-<img src="docs/images/user_storys/1.png">
+<details><summary>1. As a user, I can register an account so that I can securely use the site </summary>
+<img src="docs//userstory/1.png">
 </details>
 
-<details><summary>2. As a user, I can browse all available products</summary>
-<img src="docs/images/user_storys/1.png">
+<details><summary>2. As a user, I can browse available products so I can choose what to buy.</summary>
+<img src="docs//userstory/2.png">
 </details>
 
-<details><summary>3. As a user, I can add items to my cart</summary>
-<img src="docs/images/user_storys/1.png">
+<details><summary>3. As a user, I can add a product to my cart so I can buy it later. </summary>
+<img src="docs//userstory/3.png">
 </details>
 
-<details><summary>4. As a user, I can view and manage my cart</summary>
-<img src="docs/images/user_storys/1.png">
+<details><summary>4. As a user, I can update cart quantities or remove items</summary>
+<img src="docs//userstory/4.png">
 </details>
 
 <details><summary>5. As a user, I can check out securely using Stripe</summary>
-<img src="docs/images/user_storys/1.png">
+<img src="docs//userstory/5.png">
 </details>
 
-<details><summary>6. As a user, I can view a success or cancellation message</summary>
-<img src="docs/images/user_storys/1.png">
+<details><summary>6. As a user, I can leave a comment and manage my own comments.</summary>
+<img src="docs//userstory/6.png">
 </details>
+
+<details><summary>7. As a user, I can request a password reset in case I forget it.</summary>
+<img src="docs//userstory/7.png">
+</details>
+
+<details><summary>8. As a user, I can navigate the site easily on any device</summary>
+<img src="docs//userstory/8.png">
+</details>
+
+
 
 ### Admin
 
-<details><summary>7. As an admin, I can manage product inventory.</summary>
+<details><summary>9. As an admin, I can manage products so that I can keep the product catalog up to date.</summary>
+<img src="docs/images/user_storys/9.png">
+</details>
+
+<details><summary>10. As an admin, I can moderate user comments so that I can ensure community guidelines are followed.</summary>
 <img src="docs/images/user_storys/10.png">
 </details>
 
-<details><summary>8. As an admin, I can view orders and users.</summary>
-<img src="docs/images/user_storys/10.png">
+<details><summary>11. As an admin, I can view user accounts and order history so that I can assist users or resolve disputes.</summary>
+<img src="docs/images/user_storys/11.png">
 </details>
+
+
+
+
+<details><summary>12. As an admin, I can manage products and comments.</summary>
+<img src="docs/images/user_storys/7.png">
+</details>
+
+
 
 ---
 
@@ -286,12 +309,15 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/) to plan the UI s
   - Leave comments on product pages.
   - View all comments related to a product.
   - Delete their own comments.
+  - Edit their own comment.
 - Admin can manage all comments through the admin panel.
 
 <details><summary>💬 Screenshots</summary>
 
-![Comments](docs/images/features/comments.png)  
-![Add Comment](docs/images/features/add-comment.png)
+![Comments](docs/features/comment.png)  
+![Add Comment](docs/features/editcomment.png)
+![Delete Comment](docs/features/deletecomment.png)
+
 
 </details>
 
@@ -305,24 +331,12 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/) to plan the UI s
 
 <details><summary>🔐 Screenshots</summary>
 
-![Admin Dashboard](docs/images/features/admin-dashboard.png)  
-![Manage Products](docs/images/features/manage-products.png)
+![Admin Dashboard](docs/features/adminpanel.png)  
 
 </details>
 
 ---
 
-### 📱 Responsive UI
-- Mobile-friendly design using Bootstrap 5.
-- Smooth navigation across desktop, tablet, and mobile devices.
-- **Cart, navbar, and footer adapt to screen size.**
-
-<details><summary>📱 Screenshots</summary>
-
-![Mobile View](docs/images/features/mobile.png)  
-![Tablet View](docs/images/features/tablet.png)
-
-</details>
 
 ---
 
@@ -333,7 +347,7 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/) to plan the UI s
 
 <details><summary>📧 Screenshots</summary>
 
-![Email Confirmation](docs/images/features/email-confirmation.png)
+![Email Confirmation](docs/features/emailvali.png)
 
 </details>
 
@@ -345,10 +359,220 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/) to plan the UI s
 
 <details><summary>⚡ Screenshots</summary>
 
-![Messages](docs/images/features/messages.png)
+![Messages](docs/features/messages.png)
 
 </details>
 
+## 🧪 Manual Testing
+
+---
+
+### ✅ 1. User Story: Register an Account  
+_As a user, I can register an account so that I can securely use the site._
+
+#### Test Cases
+
+| **Step** | **Expected Result** | **Actual Result** |
+|---------|---------------------|-------------------|
+| Click on 'Sign Up' | Signup form appears | Works as expected |
+| Fill out the form and submit | Account is created and confirmation email sent | Works as expected |
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/images/user_storys_testing/signup1.png">
+<img src="docs/images/user_storys_testing/signup2.png">
+</details>
+
+---
+
+### ✅ 2. User Story: Browse Products  
+_As a user, I can browse available products so I can choose what to buy._
+
+#### Test Cases
+
+| **Step** | **Expected Result** | **Actual Result** |
+|---------|---------------------|-------------------|
+| Visit products page | All products are displayed with info | Works as expected |
+| Click on product | Product detail page loads | Works as expected |
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/images/user_storys_testing/products1.png">
+<img src="docs/images/user_storys_testing/productdetail1.png">
+</details>
+
+---
+
+### ✅ 3. User Story: Add Product to Cart  
+_As a user, I can add a product to my cart so I can buy it later._
+
+#### Test Cases
+
+| **Step** | **Expected Result** | **Actual Result** |
+|---------|---------------------|-------------------|
+| Click 'Add to Cart' | Product is added and message shows | Works as expected |
+| Check cart | Product is visible in cart | Works as expected |
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/images/user_storys_testing/addtocart1.png">
+<img src="docs/images/user_storys_testing/cartview1.png">
+</details>
+
+---
+
+### ✅ 4. User Story: Edit or Remove Items from Cart  
+_As a user, I can update cart quantities or remove items._
+
+#### Test Cases
+
+| **Step** | **Expected Result** | **Actual Result** |
+|---------|---------------------|-------------------|
+| Increase/decrease quantity | Cart total updates accordingly | Works as expected |
+| Click remove | Product is deleted from cart | Works as expected |
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/images/user_storys_testing/cartupdate1.png">
+<img src="docs/images/user_storys_testing/removefromcart1.png">
+</details>
+
+---
+
+### ✅ 5. User Story: Checkout with Stripe  
+_As a user, I can checkout securely using Stripe._
+
+#### Test Cases
+
+| **Step** | **Expected Result** | **Actual Result** |
+|---------|---------------------|-------------------|
+| Click 'Checkout' | Redirected to Stripe | Works as expected |
+| Complete payment | Redirected to success page | Works as expected |
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/images/user_storys_testing/stripe1.png">
+<img src="docs/images/user_storys_testing/success1.png">
+</details>
+
+---
+
+### ✅ 6. User Story: Add and Manage Product Comments  
+_As a user, I can leave a comment and manage my own comments._
+
+#### Test Cases
+
+| **Step** | **Expected Result** | **Actual Result** |
+|---------|---------------------|-------------------|
+| Submit a comment | Comment is visible under product | Works as expected |
+| Edit or delete own comment | Changes appear or comment is removed | Works as expected |
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/images/user_storys_testing/comment1.png">
+<img src="docs/images/user_storys_testing/editcomment1.png">
+<img src="docs/images/user_storys_testing/deletecomment1.png">
+</details>
+
+---
+
+### ✅ 7. User Story: Reset Password  
+_As a user, I can request a password reset in case I forget it._
+
+#### Test Cases
+
+| **Step** | **Expected Result** | **Actual Result** |
+|----------|---------------------|-------------------|
+| Click on 'Forgot password' | Password reset form appears | Works as expected |
+| Enter registered email and submit | Reset email is sent with instructions | Works as expected |
+| Follow link in email | Password reset form loads | Works as expected |
+| Enter new password and confirm | Password updated and redirected to login | Works as expected |
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/images/user_storys_testing/8.1.png">
+<img src="docs/images/user_storys_testing/8.2.png">
+</details>
+
+---
+
+
+### ✅ 8. User Story: Responsive Navigation  
+_As a user, I can navigate the site easily on any device._
+
+#### Test Cases
+
+| **Step** | **Expected Result** | **Actual Result** |
+|----------|---------------------|-------------------|
+| Open website on mobile device | Navbar collapses into hamburger menu | Works as expected |
+| Tap hamburger icon | Navigation links expand | Works as expected |
+| Tap link | Navigation menu closes and page loads | Works as expected |
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/images/user_storys_testing/10.1.png">
+<img src="docs/images/user_storys_testing/10.2.png">
+</details>
+
+---
+
+### Admin
+
+### ✅ 9. Admin: Manage Products
+_As an admin, I can manage products so that I can keep the product catalog up to date._
+
+#### Test Cases
+
+| **Step**                   | **Expected Result**                            | **Actual Result**      |
+|---------------------------|------------------------------------------------|------------------------|
+| Log in to admin panel     | Admin dashboard loads                          | Works as expected      |
+| Navigate to products list | Products are listed with options to edit/delete | Works as expected      |
+| Edit a product            | Product form loads with existing data          | Works as expected      |
+| Delete a product          | Product is removed from the product list       | Works as expected      |
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/images/user_storys_testing/11.1.png">
+<img src="docs/images/user_storys_testing/11.2.png">
+</details>
+
+----
+
+### ✅ 10. Admin Story: Manage Comments  
+_As an admin, I can moderate user comments so that I can ensure community guidelines are followed._
+
+#### Test Cases
+
+| **Step**                       | **Expected Result**                                | **Actual Result**      |
+|-------------------------------|----------------------------------------------------|------------------------|
+| Log in to admin panel         | Admin dashboard loads                              | Works as expected      |
+| Navigate to comments section  | All product comments are listed                    | Works as expected      |
+| Delete inappropriate comment  | Comment is removed and no longer visible           | Works as expected      |
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/images/user_storys_testing/12.1.png">
+<img src="docs/images/user_storys_testing/12.2.png">
+</details>
+
+---
+
+### ✅ 11. Admin Story: Manage Accounts and Order History  
+_As an admin, I can view user accounts and order history so that I can assist users or resolve disputes._
+
+#### Test Cases
+
+| **Step**                        | **Expected Result**                              | **Actual Result**      |
+|--------------------------------|--------------------------------------------------|------------------------|
+| Log in to admin panel          | Admin dashboard loads                            | Works as expected      |
+| View user list                 | All registered users are listed                  | Works as expected      |
+| View order history for a user  | Orders for that user are shown                   | Works as expected      |
+
+<details>
+<summary>Screenshot</summary>
+<img src="docs/images/user_storys_testing/adminpanel1.png">
+<img src="docs/images/user_storys_testing/managecomments1.png">
+</details>
 ---
 
 ## 🧪 Testing
@@ -371,8 +595,8 @@ The W3C Markup Validation Service was used to validate the HTML of the website. 
 <details><summary>Products</summary>
 <img src="docs/html/products.png">
 <img src="docs/html/detailproduct.png">
-<img src="docs/html/commentedit.png">
-<img src="docs/html/commentdelete.png">
+<img src="docs/html/editcomment.png">
+<img src="docs/html/deletecomment.png">
 
 </details>
 <details><summary>Cart</summary>
@@ -483,8 +707,7 @@ This guide will walk you through deploying your application from GitHub using **
 
 <details>
 <summary>📸 Screenshots</summary>
-<img src="docs/images/heroku/signin.png">
-<img src="docs/images/heroku/signup.png">
+<img src="docs/heroku/dash.png">
 </details>
 
 ---
@@ -496,25 +719,34 @@ This guide will walk you through deploying your application from GitHub using **
 
 <details>
 <summary>📸 Screenshots</summary>
-<img src="docs/images/heroku/dash.png">
-<img src="docs/images/heroku/new.png">
-<img src="docs/images/heroku/create.png">
+<img src="docs/heroku/dash.png">
+<img src="docs/heroku/new.png">
+<img src="docs/heroku/create.png">
 </details>
 
 ---
 
 ### 🔧 **3. Configure Settings**
-1. Go to **Settings**.
-2. Scroll down to **Config Vars** and add:
-   - `DATABASE_URL` (from `settings.py`)
-   - `SECRET_KEY` (from `settings.py`)
-   - `DISABLE_COLLECTSTATIC = 1`
+
+1. In your Heroku **Dashboard**, go to your app's **Settings** tab.
+2. Scroll down to **Config Vars** and click **Reveal Config Vars**.
+3. Add the following environment variables:
+
+```bash
+heroku config:set SECRET_KEY='your-django-secret-key'
+heroku config:set DATABASE_URL='your-database-url'
+heroku config:set STRIPE_PUBLIC_KEY='your-stripe-public-key'
+heroku config:set STRIPE_SECRET_KEY='your-stripe-secret-key'
+heroku config:set STRIPE_WEBHOOK_SECRET='your-stripe-webhook-secret'
+heroku config:set EMAIL_HOST_USER='your-sendgrid-email@example.com'
+heroku config:set EMAIL_HOST_PASSWORD='your-sendgrid-api-key'
+
 
 <details>
 <summary>📸 Screenshots</summary>
-<img src="docs/images/heroku/main.png">
-<img src="docs/images/heroku/settings.png">
-<img src="docs/images/heroku/config.png">
+<img src="docs/heroku/dash.png">
+<img src="docs/heroku/settings.png">
+<img src="docs/heroku/config.png">
 </details>
 
 ---
@@ -593,31 +825,45 @@ This guide will walk you through deploying your application from GitHub using **
 ---
 
 ## 📟 **Heroku Deployment via Terminal**
-If you prefer the **command-line approach**, follow these steps:
+If you prefer the **command-line approach**, here’s how to deploy **CoffeHub**:
 
 ### 1️⃣ **Create a New Heroku App**
-```sh
-heroku create doit-todo-app
+```bash
+heroku create coffehub-app
 ```
 
-### 2️⃣ **Set Up Environment Variables**
-```sh
-heroku config:set SECRET_KEY='your-secret-key'
+### 2️⃣ **Set Environment Variables**
+Make sure you set your secret keys and database config:
+```bash
+heroku config:set SECRET_KEY='your-django-secret-key'
 heroku config:set DATABASE_URL='your-database-url'
+heroku config:set EMAIL_HOST_USER='your-sendgrid-email'
+heroku config:set EMAIL_HOST_PASSWORD='your-sendgrid-password'
+heroku config:set STRIPE_PUBLIC_KEY='your-stripe-public-key'
+heroku config:set STRIPE_SECRET_KEY='your-stripe-secret-key'
+heroku config:set STRIPE_WH_SECRET='your-stripe-webhook-secret'
+heroku config:set USE_AWS=True
 ```
 
-### 3️⃣ **Push Code to Heroku**
-```sh
+### 3️⃣ **Push to Heroku**
+Make sure your `main` branch is up-to-date, then push:
+```bash
 git push heroku main
 ```
 
-### 4️⃣ **Run Database Migrations**
-```sh
+### 4️⃣ **Run Migrations and Collect Static Files**
+```bash
 heroku run python manage.py migrate
+heroku run python manage.py collectstatic --noinput
 ```
 
-### 5️⃣ **Restart the Heroku App**
-```sh
+### 5️⃣ **Create Superuser (Optional but Recommended)**
+```bash
+heroku run python manage.py createsuperuser
+```
+
+### 6️⃣ **Restart App**
+```bash
 heroku restart
 ```
 
