@@ -70,35 +70,35 @@ CoffeHub is an eCommerce Django web app for coffee lovers. Users can browse, add
 ### Users
 
 <details><summary>1. As a user, I can register an account so that I can securely use the site </summary>
-<img src="docs//userstory/1.png">
+<img src="docs/userstory/1.png">
 </details>
 
 <details><summary>2. As a user, I can browse available products so I can choose what to buy.</summary>
-<img src="docs//userstory/2.png">
+<img src="docs/userstory/2.png">
 </details>
 
 <details><summary>3. As a user, I can add a product to my cart so I can buy it later. </summary>
-<img src="docs//userstory/3.png">
+<img src="docs/userstory/3.png">
 </details>
 
 <details><summary>4. As a user, I can update cart quantities or remove items</summary>
-<img src="docs//userstory/4.png">
+<img src="docs/userstory/4.png">
 </details>
 
 <details><summary>5. As a user, I can check out securely using Stripe</summary>
-<img src="docs//userstory/5.png">
+<img src="docs/userstory/5.png">
 </details>
 
 <details><summary>6. As a user, I can leave a comment and manage my own comments.</summary>
-<img src="docs//userstory/6.png">
+<img src="docs/userstory/6.png">
 </details>
 
 <details><summary>7. As a user, I can request a password reset in case I forget it.</summary>
-<img src="docs//userstory/7.png">
+<img src="docs/userstory/7.png">
 </details>
 
 <details><summary>8. As a user, I can navigate the site easily on any device</summary>
-<img src="docs//userstory/8.png">
+<img src="docs/userstory/8.png">
 </details>
 
 
@@ -115,13 +115,6 @@ CoffeHub is an eCommerce Django web app for coffee lovers. Users can browse, add
 
 <details><summary>11. As an admin, I can view user accounts and order history so that I can assist users or resolve disputes.</summary>
 <img src="docs/images/user_storys/11.png">
-</details>
-
-
-
-
-<details><summary>12. As an admin, I can manage products and comments.</summary>
-<img src="docs/images/user_storys/7.png">
 </details>
 
 
@@ -562,7 +555,8 @@ The W3C Markup Validation Service was used to validate the HTML of the website. 
 <img src="docs/html/signup.png">
 <img src="docs/html/emails.png">
 <img src="docs/html/changepassword.png">
-
+</details>
+</details>
 ### CSS Validation
 The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.
 The style.css file was approved.
@@ -599,8 +593,9 @@ The WAVE WebAIM web accessibility evaluation tool was used to ensure the website
 <img src="docs/access/signup.png">
 <img src="docs/access/email.png">
 <img src="docs/access/password.png">
-
 </details>
+
+
 
 
 ### Performance 
@@ -622,6 +617,7 @@ Google Lighthouse in Google Chrome Developer Tools was used to test the performa
 <img src="docs/lighthouse/signup.png">
 <img src="docs/lighthouse/mail.png">
 <img src="docs/lighthouse/password.png">
+</details>
 
 
 
@@ -693,7 +689,7 @@ heroku config:set STRIPE_SECRET_KEY='your-stripe-secret-key'
 heroku config:set STRIPE_WEBHOOK_SECRET='your-stripe-webhook-secret'
 heroku config:set EMAIL_HOST_USER='your-sendgrid-email@example.com'
 heroku config:set EMAIL_HOST_PASSWORD='your-sendgrid-api-key'
-
+```
 
 <details>
 <summary>📸 Screenshots</summary>
